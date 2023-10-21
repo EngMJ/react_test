@@ -1,5 +1,5 @@
 import './App.css';
-import CmpA from "./items/usecallback/cmpA";
+import UsecallbackCmp from "./items/usecallback/cmpA";
 import MemoCmp from "./items/useMemo/MemoCmp";
 
 function Line () {
@@ -11,7 +11,7 @@ function Line () {
 function App() {
   return (
     <div className="App">
-      <CmpA></CmpA>
+      <UsecallbackCmp></UsecallbackCmp>
       <Line></Line>
       <MemoCmp></MemoCmp>
     </div>

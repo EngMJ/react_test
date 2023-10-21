@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import CmpB from "./cmpB";
 
-export default function CmpA() {
+export default function UsecallbackCmp() {
     const [num, setNum] = useState(0);
     // 加1
     function add() {
