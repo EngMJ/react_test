@@ -4,6 +4,8 @@ import MemoCmp from "./items/useMemo/MemoCmp";
 import UseDeferredValueCmp from "./items/useDederredValue/useDeferredValueCmp";
 import UseImperativeHandleCmp from "./items/useImperativeHandle/useImperativeHandle";
 import UseLayoutEffectCmp from "./items/useLayoutEffect/useLayoutEffect";
+import UseSyncExternalStoreCmp from "./items/useSyncExternalStore/useSyncExternalStore";
+import UseTransitionCmp from "./items/useTransition/useTransition";
 
 function Line () {
     return (
@@ -23,6 +25,10 @@ function App() {
         <UseImperativeHandleCmp></UseImperativeHandleCmp>
         <Line></Line>
         <UseLayoutEffectCmp></UseLayoutEffectCmp>
+        <Line></Line>
+        <UseSyncExternalStoreCmp></UseSyncExternalStoreCmp>
+        <Line></Line>
+        <UseTransitionCmp></UseTransitionCmp>
     </div>
   );
 }
