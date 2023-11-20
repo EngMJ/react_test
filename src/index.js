@@ -2,12 +2,46 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import RouterTest from "./pages/test";
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './store';
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Provider store={store}>
+            <Routes>
+                <Route path="/" element={<App />} >
+                    <Route path="test" element={<RouterTest />} >
+                        <Route
+                            index
+                            element={
+                                <main style={{ padding: "1rem" }}>
+                                    <p>当前路由为/test/, 设置index路由不然啥都不显示</p>
+                                </main>
+                            }
+                        />
+                        <Route path=":id" element={<RouterTest />} ></Route>
+                    </Route>
+                </Route>
+                <Route
+                   path="*"
+                   element={
+                       <main style={{ padding: "1rem" }}>
+                           <p>There's nothing here!</p>
+                       </main>
+                   }
+                />
+            </Routes>
+          </Provider>
+      </BrowserRouter>
   </React.StrictMode>
 );
 

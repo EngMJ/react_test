@@ -1,4 +1,7 @@
 import './App.css';
+import { Link, Outlet } from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux";
+import {increment, decrement, incrementByAmount} from './store/modes/conter';
 import UsecallbackCmp from "./items/usecallback/cmpA";
 import MemoCmp from "./items/useMemo/MemoCmp";
 import UseDeferredValueCmp from "./items/useDederredValue/useDeferredValueCmp";
@@ -14,8 +17,19 @@ function Line () {
 }
 
 function App() {
+  const val = useSelector(store => store.counter.value);
+  const dispatch = useDispatch();
+
+  function clickHandle () {
+      dispatch(increment());
+  }
+
   return (
     <div className="App">
+        <Outlet></Outlet>
+        <Line></Line>
+        <Link to={'/test'}>点击跳转test页面</Link>
+        <div onClick={clickHandle}>点击增加store中的counter值, 当前为 {val}</div>
         <UsecallbackCmp></UsecallbackCmp>
         <Line></Line>
         <MemoCmp></MemoCmp>
@@ -29,6 +43,7 @@ function App() {
         <UseSyncExternalStoreCmp></UseSyncExternalStoreCmp>
         <Line></Line>
         <UseTransitionCmp></UseTransitionCmp>
+        <Line></Line>
     </div>
   );
 }
