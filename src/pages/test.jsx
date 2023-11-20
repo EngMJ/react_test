@@ -7,6 +7,7 @@ import {useLocation, useParams, useSearchParams} from "react-router-dom";
 export default function RouterTest () {
     const [query, setQuery] = useState('');
     const [params, setParams] = useState('');
+    const [pageMsg, setPageMsg] = useState('');
     const nav = useNavigate();
     const val = useSelector(store => store.counter.value);
     const dispatch = useDispatch();
@@ -35,6 +36,15 @@ export default function RouterTest () {
         nav('/test/1');
     }
 
+    function setPageQuery () {
+        setSearchParams({tset: '123'})
+    }
+
+    function getPageMsg () {
+        setPageMsg(searchParams.get('msg') || '')
+    }
+
+
     return (
         <div>
             <h1>当前路由为 test</h1>
@@ -44,6 +54,8 @@ export default function RouterTest () {
             <h1 onClick={getRoute}>获取当前路由信息</h1>
             <h1 >useLocation查询字符串: {query}</h1>
             <h1 >useParams路由参数: {params}</h1>
+            <h1 onClick={setPageQuery}>useSearchParams => setSearchParams 点击设置当前页面查询字符串?...test=123</h1>
+            <h1 onClick={getPageMsg}>useSearchParams => searchParams 点击获取当前页面对应字段的查询字符串, 点击获取msg的值, 当前值为 {pageMsg}</h1>
             <h1 onClick={routeHandle}>进入test/1页面</h1>
             ----------------------------------
             <Outlet></Outlet>

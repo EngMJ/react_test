@@ -14,35 +14,35 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <BrowserRouter>
-          <Provider store={store}>
-            <Routes>
-                <Route path="/" element={<App />} >
-                    <Route path="test" element={<RouterTest />} >
-                        <Route
-                            index
-                            element={
-                                <main style={{ padding: "1rem" }}>
-                                    <p>当前路由为/test/, 设置index路由不然啥都不显示</p>
-                                </main>
-                            }
-                        />
-                        <Route path=":id" element={<RouterTest />} ></Route>
+    <Provider store={store}>
+        <React.StrictMode>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<App/>}>
+                        <Route path="test" element={<RouterTest/>}>
+                            <Route
+                                index
+                                element={
+                                    <main style={{padding: "1rem"}}>
+                                        <p>当前路由为/test/, 设置index路由不然啥都不显示</p>
+                                    </main>
+                                }
+                            />
+                            <Route path=":id" element={<RouterTest/>}></Route>
+                        </Route>
                     </Route>
-                </Route>
-                <Route
-                   path="*"
-                   element={
-                       <main style={{ padding: "1rem" }}>
-                           <p>There's nothing here!</p>
-                       </main>
-                   }
-                />
-            </Routes>
-          </Provider>
-      </BrowserRouter>
-  </React.StrictMode>
+                    <Route
+                        path="*"
+                        element={
+                            <main style={{padding: "1rem"}}>
+                                <p>There's nothing here!</p>
+                            </main>
+                        }
+                    />
+                </Routes>
+            </BrowserRouter>
+        </React.StrictMode>
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

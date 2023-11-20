@@ -28,7 +28,7 @@ function App() {
     <div className="App">
         <Outlet></Outlet>
         <Line></Line>
-        <Link to={'/test'}>点击跳转test页面</Link>
+        <Link to={'/test?msg=我是参数'}>点击跳转test页面</Link>
         <div onClick={clickHandle}>点击增加store中的counter值, 当前为 {val}</div>
         <UsecallbackCmp></UsecallbackCmp>
         <Line></Line>
