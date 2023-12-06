@@ -26,6 +26,27 @@ function App() {
 
   return (
     <div className="App">
+        <div id="main" class="float">
+            <div id="main-wrap">main</div>
+        </div>
+        <div id="left" class="float">left</div>
+        <div id="right" class="float">right</div>
+        <div className={'text-box'}>
+            <div className={'text-center'}>
+                居中方式
+            </div>
+        </div>
+        <div className={'classTest'}>
+            <div style={{overflow: 'auto'}}>
+                <div className={'m-float'}></div>
+                <div className={'m-text'}>
+                    我是text我是text我是text我是text我是text我是text我是text我是text我是text我是text我是text我是text
+                </div>
+            </div>
+            <div className={'m-test'}>
+                我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本
+            </div>
+        </div>
         <Outlet></Outlet>
         <Line></Line>
         <Link to={'/test?msg=我是参数'}>点击跳转test页面</Link>
